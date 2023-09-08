@@ -6,27 +6,21 @@
  */
 int main(void)
 {
-	int w, x, y, z;
+	int x, y;
 
-	for (w = 0 ; w <= 9 ; w++)
+	for (x = 0 ; x <= 90 ; x++)
 	{
-		for (x = 0 ; x <= 9 ; x++)
+		for (y = x ; y <= 99 ; y++)
 		{
-			for (y = 0; y <= 9 ; y++)
+			putchar((x / 10) + '0');
+			putchar((x % 10) + '0');
+			putchar(' ');
+			putchar((y / 10) + '0');
+			putchar((y % 10) + '0');
+			if (x != 99 || y != 99)
 			{
-				for (z = y + 1 ; z <= 9 ; z++)
-				{
-					putchar(w + '0');
-					putchar(x + '0');
-					putchar(' ');
-					putchar(y + '0');
-					putchar(z + '0');
-					if (w != 99 || x != 99)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
