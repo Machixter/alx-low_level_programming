@@ -8,7 +8,7 @@ int main(void)
 {
 	int x, y;
 
-	for (x = 0 ; x <= 90 ; x++)
+	for (x = 0 ; x <= 98 ; x++)
 	{
 		for (y = x ; y <= 99 ; y++)
 		{
