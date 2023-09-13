@@ -18,11 +18,11 @@ void times_table(void)
 			/*printf("%2d, ", ans);*/
 			if (y == 0)
 			{
-				printf("%d ", ans);
+				printf("%d,", ans);
 			}
 			else
 			{
-				printf("%2d ", ans);
+				printf(" %2d", ans);
 				if (y != 9)
 				{
 					printf(",");
