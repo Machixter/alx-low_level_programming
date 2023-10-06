@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * string_nconcat - concantenates two strings
  * @s1: pointer to string
@@ -7,11 +6,9 @@
  * @n: no of bytes
  * Return: result
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int t_len;
-	unsigned int len1;
+	unsigned int x, lens1 = 0, lens2 = 0;
 	char *result;
 
 	if (s1 == NULL)
@@ -22,19 +19,32 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
-	len1 = strlen(s1);
-
-	len1 = strlen(s2);
-	t_len = len1 + n;
-	result = (char *) malloc((t_len + 1) * sizeof(char));
-
-	if (result == NULL)
+	for (x = 0 ; s1[x] != '\0' ; x++)
 	{
-		return (NULL);
+		lens1++;
 	}
-	strcpy(result, s1);
-	strncat(result, s2, n);
-
-	result[t_len] = '\0';
+	for (x = 0 ; s2[x] != '\0' ; x++)
+	{
+		lens2++;
+	}
+	result = malloc(sizeof(char) * (lens1 + n) + 1);
+	if (result == NULL)
+		return (NULL);
+	if (n >= lens2)
+	{
+		for (x = 0 ; s1[x] != '\0' ; x++)
+			result[x] = s1[x];
+		for (x = 0 ; s2[x] != '\0' ; x++)
+			result[lens1 + x] = s2[x];
+		result[lens1 + x] = '\0';
+	}
+	else
+	{
+		for (x = 0 ; s1[x] != '\0' ; x++)
+			result[x] = s1[x];
+		for (x = 0 ; s2[x] != '\0' ; x++)
+			result[lens1 + x] = s2[x];
+		result[lens1 + x] = '\0';
+	}
 	return (result);
 }

@@ -8,23 +8,20 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int x;
 	void *ptr;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
-	ptr = malloc(nmemb * size);/*allocate memory using malloc*/
+	ptr = calloc(nmemb, size);/*allocate memory using malloc*/
 
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	for (x = 0 ; x < nmemb * size ; x++)/*set allocated mem to 0*/
+	else
 	{
-		*((char *)ptr + 1) = 0;
+		return (ptr);
 	}
-	free(ptr);
-	return (ptr);
 }

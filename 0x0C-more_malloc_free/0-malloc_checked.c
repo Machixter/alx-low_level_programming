@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * malloc_ckecked - allocates memory
+ * malloc_checked - allocates memory
  * @b: no of bytes of mem to allocate
  * Return: ptr
  */
